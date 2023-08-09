@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit;
         }
     }
-    
+     
     $is_invalid = true;
 }
 ?>
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 							  <h3 class="mb-4"><?php if ($is_invalid): ?>
         <em>Invalid login</em>
     <?php endif; ?></h3>
-							<form method="post" class="signin-form">
+							<form method="post" class=" ">
 			      		<div class="form-group mb-3">
 			      			<label class="label" for="uname">Username</label>
 			      			<input type="text" name="uname" class="form-control" placeholder="Username" value="<?= htmlspecialchars($_POST["uname"] ?? "") ?>" required>

@@ -37,14 +37,20 @@ $result = $mysqli->query($sql);
                <!-- General settings section -->
                <?php if ($result->num_rows > 0): ?>
                     <?php while ($row = $result->fetch_assoc()): ?>
-
                         <div class="card">
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-between mb-3">
                                 <h5 class="card-title m-0"> <?php echo $row["name"]; ?> </h5>
+
+                                <form id="myForm" action="deleteuser.php" method="post">
+                                <input type="hidden" name="user_id" value="<?php echo $row["id"]; ?>">
+</form>
                                 <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#general-s">
-                                    <i class="bi bi-pencil-square"></i> Delete
-                                </button>
+                                    <i class="bi bi-pencil-square"></i> <a href="javascript:void(0);" onclick="document.getElementById('myForm').submit();" class="btn btn-primary">
+    Delete
+</a>
+
+
                             </div>
                         <h6 class="card-subtitle mb-1 fw-bold">ID</h6>
                         <p class="card-text"> <?php echo $row["id"]; ?> </p>
